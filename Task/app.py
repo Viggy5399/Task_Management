@@ -104,12 +104,20 @@ def retrieve():
 
 @app.route("/profile", methods = ["GET","POST"])
 def profile():
+
+    details=list(db.find({"email":session["email"]},{}))
+    print(details)
+    print(details[0]['name'])    
     c_task = completed.count_documents(
-        {'user': session['email']})
+        {'email': session['email']})
     print(c_task)
     p_task = progress.count_documents(
-        {'user': session['email']})
-        
+        {'email': session['email']})
+    percent = int((c_task/(p_task + c_task))*100)
+    # except ZeroDivisionError:
+        # percent = 70
+    return render_template("profile.html",percent=percent,details=details,c_task=c_task,p_task=p_task) 
+
 
 
 
