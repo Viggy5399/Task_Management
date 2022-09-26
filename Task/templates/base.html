@@ -44,10 +44,10 @@
     <nav>
         <div class="flex-1"></div>
         <div class="flex-2">
-            <p> <a href=""><i class="fa-solid fa-user"></i></a> </p>
+            <p> <a href="{{url_for('profile')}}"><i class="fa-solid fa-user"></i></a> </p>
             <p> <a href=""><i class="fa-solid fa-gear"></i></a> </p>
             <p> <a href="{{url_for('retrieve') }}"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></p>
-            <p> <a href=""><i class="fa-solid fa-right-from-bracket"></i></a> </p>
+            <p> <a href="{{url_for('signout')}}"><i class="fa-solid fa-right-from-bracket"></i></a> </p>
         </div>
     </nav>
     <div id="message" class="bg-dark">

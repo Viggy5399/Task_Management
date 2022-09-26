@@ -136,6 +136,20 @@ def clearall():
 
     return redirect(url_for('dashboard'))
 
+@app.route("/remove", methods=["GET","POST"])
+def remove():
+    progress.delete_one({"email":session["email"]})
+    completed.delete_one({"email":session["email"]})
+    db.delete_one({"email":session["email"]})
+    return redirect(url_for('homepage'))
+
+@app.route("/signout", methods=["GET","POST"])
+def signout():
+    session['email'] = None
+        
+    return redirect(url_for('homepage'))
+
+
 
 
 

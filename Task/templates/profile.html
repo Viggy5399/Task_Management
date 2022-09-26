@@ -59,7 +59,7 @@
         <div id="bdiv"><button style="margin-right: 2%;height:35px;width:100px;background-color:blue;color:white" data-toggle="modal" data-target="#changePassword" aria-haspopup="true"
             class="btn btn-sm btn-primary">Change password</button>
         <button style="height:35px;background-color:red;color:white" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteAccount"
-            aria-haspopup="true">Delete account</button></div>
+        aria-haspopup="true"><a href = {{ url_for('remove')  }}>Delete account</a></button>
         </div>
     </div>
 </div>
